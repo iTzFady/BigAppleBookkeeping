@@ -1205,14 +1205,38 @@ footer {
   padding-top: 20px;
   text-align: center;
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-bottom p {
   color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
   letter-spacing: 0.5px;
+  border-left: 1px solid;
+  padding-left: 15px;
+}
+.credit {
+  text-align: center;
+  margin-right: 20px;
+}
+.credit a,
+i {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+.credit p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.spinner {
+  margin-left: 8px;
 }
 
+.fa-spinner {
+  margin-right: 5px;
+}
 /* Responsive Design */
 @media (max-width: 992px) {
   .hero-content h2 {
@@ -1301,6 +1325,9 @@ footer {
 
   .legal-links a {
     margin: 0 10px;
+  }
+  .footer-bottom p {
+    border: none;
   }
 }
 

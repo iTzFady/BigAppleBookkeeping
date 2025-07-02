@@ -116,9 +116,11 @@
             </div>
 
             <div class="social-media">
-              <a href="#"><i class="fab fa-linkedin"></i></a>
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
+              <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
+              <a href="https://www.facebook.com/profile.php?id=100071081411240"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
             </div>
           </div>
 
@@ -160,7 +162,12 @@
                 value="New Contact Form Submission"
               />
               <input type="text" name="_gotcha" style="display: none" />
-              <button type="submit" class="btn btn-large">Send Message</button>
+              <button type="submit" id="submitButton" class="btn btn-large">
+                <span id="buttonText">Send Message</span>
+                <span id="buttonSpinner" class="spinner" style="display: none">
+                  <i class="fas fa-spinner fa-spin"></i> Sending...
+                </span>
+              </button>
             </form>
           </div>
         </div>
@@ -221,6 +228,10 @@
           </div>
         </div>
         <div class="footer-bottom">
+          <div class="credit">
+            <i class="fa-solid fa-hammer"></i>
+            <a href="mailto:fadyfady215@hotmail.com">Website By Fady Samy</a>
+          </div>
           <p>&copy; 2025 Big Apple Bookkeeping. All Rights Reserved.</p>
         </div>
       </div>
@@ -240,6 +251,12 @@
         .addEventListener("submit", async function (event) {
           event.preventDefault();
 
+          const submitButton = document.getElementById("submitButton");
+          const buttonText = document.getElementById("buttonText");
+          const buttonSpinner = document.getElementById("buttonSpinner");
+
+          submitButton.disabled = true;
+
           let name = document.getElementById("name").value;
           let email = document.getElementById("email").value;
           let message = document.getElementById("message").value;
@@ -253,14 +270,15 @@
           formData.append("phoneNumber", phoneNum);
           formData.append("message", message);
 
-          await fetch("/backend/send_email.php", {
+          await fetch("/send_email.php", {
             method: "POST",
             body: formData,
           })
             .then((response) => response.text())
             .then((data) => {
-              alert(response.text());
+              alert(data);
               document.getElementById("contactForm").reset();
+              submitButton.disabled = false;
             })
             .catch((error) => console.error("Error:", error));
         });
