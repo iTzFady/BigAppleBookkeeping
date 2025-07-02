@@ -1220,8 +1220,12 @@ footer {
   text-align: center;
   margin-right: 20px;
 }
-.credit a,
-i {
+.credit i {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-right: 5px;
+}
+.credit a {
   color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
 }
