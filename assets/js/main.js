@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Mobile Menu Toggle
   const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-  console.log(mobileMenuToggle);
   const mobileMenu = document.querySelector(".mobile-menu");
   const burgerCheckbox = document.getElementById("burger");
 
