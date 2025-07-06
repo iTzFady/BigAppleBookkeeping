@@ -408,7 +408,17 @@ nav ul li a.active:after {
 .client-details h4 {
   margin-bottom: 5px;
 }
-
+.client-details a {
+  margin-bottom: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  letter-spacing: -0.02em;
+}
+.client-details a :hover {
+  color: #bf0a30;
+}
 .slider-controls {
   text-align: center;
   margin-top: 20px;
